@@ -3,27 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jko <marvin@42.fr>                         +#+  +:+       +#+        */
+/*   By: yacho <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/26 21:56:08 by jko               #+#    #+#             */
-/*   Updated: 2020/01/26 22:05:51 by jko              ###   ########.fr       */
+/*   Created: 2020/10/28 10:59:49 by yacho             #+#    #+#             */
+/*   Updated: 2020/10/28 12:40:58 by yacho            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strcat(char *dest, char *src)
 {
-	int index;
-	int src_index;
+	int i;
+	int s_i;
 
-	index = 0;
-	while (dest[index] != '\0')
-		index++;
-	src_index = 0;
-	while (src[src_index] != '\0')
+	i = 0;
+	s_i = 0;
+	while (dest[i] != '\0')
 	{
-		dest[index + src_index] = src[src_index];
-		src_index++;
+		i++;
 	}
-	dest[index + src_index] = '\0';
+	while (src[s_i] != '\0')
+	{
+		dest[i + s_i] = src[s_i];
+		s_i++;
+	}
+	dest[i + s_i] = '\0';
 	return (dest);
 }

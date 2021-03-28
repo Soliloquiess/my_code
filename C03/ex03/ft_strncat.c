@@ -3,27 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jko <marvin@42.fr>                         +#+  +:+       +#+        */
+/*   By: yacho <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/26 22:10:43 by jko               #+#    #+#             */
-/*   Updated: 2020/01/27 13:06:02 by jko              ###   ########.fr       */
+/*   Created: 2020/10/28 11:04:43 by yacho             #+#    #+#             */
+/*   Updated: 2020/10/28 12:40:28 by yacho            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
 	unsigned int i;
-	unsigned int j;
+	unsigned int s_i;
 
 	i = 0;
+	s_i = 0;
 	while (dest[i] != '\0')
-		i++;
-	j = 0;
-	while (src[j] != '\0' && j < nb)
 	{
-		dest[i + j] = src[j];
-		j++;
+		i++;
 	}
-	dest[i + j] = '\0';
+	while (src[s_i] != '\0' && s_i < nb)
+	{
+		dest[i + s_i] = src[s_i];
+		s_i++;
+	}
+	dest[i + s_i] = '\0';
 	return (dest);
 }

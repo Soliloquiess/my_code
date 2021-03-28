@@ -6,7 +6,7 @@
 /*   By: yacho <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/20 00:50:47 by yacho             #+#    #+#             */
-/*   Updated: 2020/10/20 01:30:38 by yacho            ###   ########.fr       */
+/*   Updated: 2020/10/21 19:14:55 by yacho            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_print(int a, int b)
 	ft_putchar(' ');
 	ft_putchar(48 + b / 10);
 	ft_putchar(48 + b % 10);
-	if( !(a==98 && b == 99))
+	if (!(a == 98 && b == 99))
 	{
 		ft_putchar(',');
 		ft_putchar(' ');
@@ -35,14 +35,14 @@ void	ft_print_comb2(void)
 {
 	int a;
 	int b;
-	
-	a=0;
-	while(a <= 99)
+
+	a = 0;
+	while (a <= 99)
 	{
-		b = a+1;
-		while( b<=99)
+		b = a + 1;
+		while (b <= 99)
 		{
-			ft_print(a,b);
+			ft_print(a, b);
 			b++;
 		}
 		a++;

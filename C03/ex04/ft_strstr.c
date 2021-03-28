@@ -3,37 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jko <marvin@42.fr>                         +#+  +:+       +#+        */
+/*   By: yacho <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/27 13:09:16 by jko               #+#    #+#             */
-/*   Updated: 2020/01/28 11:17:57 by jko              ###   ########.fr       */
+/*   Created: 2020/10/28 11:13:18 by yacho             #+#    #+#             */
+/*   Updated: 2020/10/28 12:40:17 by yacho            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strstr(char *str, char *to_find)
 {
 	int		i;
-	int		j;
-	int		check;
+	int		f_i;
 
-	if (to_find[0] == '\0')
-		return (str);
 	i = 0;
+	if (to_find[0] == '\0')
+	{
+		return (str);
+	}
 	while (str[i] != '\0')
 	{
-		j = 0;
-		check = 1;
-		while (str[i + j] != '\0' && to_find[j] != '\0')
+		f_i = 0;
+		while (str[i + f_i] == to_find[f_i] && str[i + f_i] != '\0')
 		{
-			if (str[i + j] != to_find[j])
+			if (to_find[f_i + 1] == '\0')
 			{
-				check = 0;
-				break ;
+				return (&str[i]);
 			}
-			j++;
+			f_i++;
 		}
-		if (check == 1 && to_find[j] == '\0')
-			return (str + i);
 		i++;
 	}
 	return (0);

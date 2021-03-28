@@ -3,30 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jko <marvin@42.fr>                         +#+  +:+       +#+        */
+/*   By: yacho <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/26 16:53:09 by jko               #+#    #+#             */
-/*   Updated: 2020/01/26 17:17:59 by jko              ###   ########.fr       */
+/*   Created: 2020/10/28 10:55:44 by yacho             #+#    #+#             */
+/*   Updated: 2020/10/28 12:41:30 by yacho            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(char *s1, char *s2)
+int		ft_strcmp(char *s1, char *s2)
 {
 	int index;
 
 	index = 0;
-	while (s1[index]  && s2[index] )
+	while (s1[index] != '\0' && s2[index] != '\0')
 	{
-		if (s1[index] > s2[index])
-			return (1);
-		else if (s1[index] < s2[index])
-			return (-1);
+		if (s1[index] != s2[index])
+			return (s1[index] - s2[index]);
 		index++;
 	}
-	if (s1[index] == '\0' && s2[index] == '\0')
-		return (0);
-	else if (s1[index] == '\0')
-		return (-1);
-	else
-		return (1);
+	return (s1[index] - s2[index]);
 }
